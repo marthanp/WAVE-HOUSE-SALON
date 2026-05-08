@@ -73,10 +73,58 @@
         <button class="filter-btn"        id="filter-colour"  data-filter="colour">Colour</button>
         <button class="filter-btn"        id="filter-braids"  data-filter="braids">Braids &amp; Locs</button>
         <button class="filter-btn"        id="filter-grooming" data-filter="grooming">Grooming</button>
+        <button class="filter-btn"        id="filter-images"   data-filter="images">Images</button>
       </div>
 
       <!-- ── CARDS GRID ── -->
       <div class="cards-grid" id="services-cards-grid">
+
+
+      <!-- ── HAIRSTYLE GALLERY (Hidden by Default) ── -->
+      <div class="gallery-grid" id="hairstyle-gallery" style="display: none;">
+        <figure class="gallery-card">
+          <img src="images/style1.jpg" alt="Braided Updo">
+          <figcaption>
+            <h4>Braided Updo</h4>
+            <p>Elegant formal styling for special occasions.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="images/style2.jpg" alt="Classic Fade">
+          <figcaption>
+            <h4>Classic Fade</h4>
+            <p>Precision taper with a clean finish.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="images/style3.jpg" alt="Vivid Colour">
+          <figcaption>
+            <h4>Vivid Colour</h4>
+            <p>Bold, creative colour transformations.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="images/style4.jpg" alt="Knotless Braids">
+          <figcaption>
+            <h4>Knotless Braids</h4>
+            <p>Low-tension protective styling.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="images/style5.jpg" alt="Beard Sculpting">
+          <figcaption>
+            <h4>Beard Sculpting</h4>
+            <p>Expert shaping and grooming.</p>
+          </figcaption>
+        </figure>
+        <figure class="gallery-card">
+          <img src="images/style6.jpg" alt="Silk Press">
+          <figcaption>
+            <h4>Silk Press</h4>
+            <p>Smooth, high-shine natural hair styling.</p>
+          </figcaption>
+        </figure>
+      </div>
 
         <!-- WOMEN'S PACKAGES -->
         <article class="service-pkg-card" id="pkg-wash-blowout" data-category="women" data-id="wash-blowout">
@@ -374,14 +422,25 @@
         btn.classList.add('active');
 
         const filter = btn.getAttribute('data-filter');
-        cards.forEach(card => {
-          const cats = card.getAttribute('data-category') || '';
-          if (filter === 'all' || cats.includes(filter)) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+        const cardsGrid = document.getElementById('services-cards-grid');
+        const galleryGrid = document.getElementById('hairstyle-gallery');
+
+        if (filter === 'images') {
+          cardsGrid.style.display = 'none';
+          galleryGrid.style.display = 'grid';
+        } else {
+          cardsGrid.style.display = 'grid';
+          galleryGrid.style.display = 'none';
+
+          cards.forEach(card => {
+            const cats = card.getAttribute('data-category') || '';
+            if (filter === 'all' || cats.includes(filter)) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        }
       });
     });
 
