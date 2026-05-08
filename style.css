@@ -992,3 +992,13 @@ ul { list-style: none; }
     grid-template-columns: 1fr;
   }
 }
+
+.gallery-heading {
+  font-family: var(--font-head);
+  font-size: 1.75rem;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-clr);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
