@@ -561,6 +561,9 @@ ul { list-style: none; }
   object-fit: cover;
   object-position: center;
 }
+#stylist-brian .stylist-placeholder img {
+  object-position: top;
+}
 .stylist-info { padding: 1.5rem; }
 .stylist-info h3 {
   font-family: var(--font-head);
