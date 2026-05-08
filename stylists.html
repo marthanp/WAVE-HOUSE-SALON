@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Meet the expert stylists at Wave-House Salon Kampala — certified professionals specialising in cuts, colour, braids, locs, and men's grooming." />
+  <title>Our Stylists | Wave-House Salon</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Theme Switcher Script (Head inclusion prevents flash) -->
+  <script src="theme.js"></script>
+  <style>
+    .stylist-full-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-clr);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .stylist-full-card:hover {
+      border-color: var(--accent-color);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+    .stylist-avatar {
+      width: 100%;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      letter-spacing: 3px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stylist-avatar span:first-child {
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+    }
+    .stylist-avatar::after {
+      content: '';
+      position: absolute;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 60%);
+      top: -50%; left: -50%;
+      animation: rotate 30s linear infinite;
+      z-index: 1;
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .stylist-avatar.f { background: linear-gradient(135deg, #1e1614, #2a1f1a); }
+    .stylist-avatar.m { background: linear-gradient(135deg, #141620, #1a1f2e); }
+    .stylist-avatar .exp-badge {
+      position: absolute;
+      top: 1rem; right: 1rem;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 50px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.72rem;
+      color: var(--accent-color);
+      font-family: var(--font-body);
+    }
+    .stylist-details { padding: 1.5rem; }
+    .stylist-details h3 {
+      font-family: var(--font-head);
+      font-size: 1.45rem;
+      color: var(--clr-white);
+      margin-bottom: 0.15rem;
+    }
+    .stylist-details .role {
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-color);
+      margin-bottom: 0.75rem;
+    }
+    .stylist-details .bio {
+      font-size: 0.88rem;
+      color: var(--muted-clr);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .stylist-details .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .stylist-details .tags span {
+      background: rgba(201,168,76,0.1);
+      color: var(--accent-color);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 50px;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+    .stylist-details .book-link {
+      display: block;
+      text-align: center;
+      padding: 0.65rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      background: rgba(201,168,76,0.1);
+      color: var(--accent-color);
+      border: 1px solid rgba(201,168,76,0.25);
+      transition: var(--transition);
+    }
+    .stylist-details .book-link:hover {
+      background: var(--accent-color);
+      color: #111;
+    }
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border-clr);
+      border-top: 1px solid var(--border-clr);
+    }
+    .stat-strip-item {
+      background: var(--card-bg);
+      padding: 0.85rem;
+      text-align: center;
+    }
+    .stat-strip-item span:first-child {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 1.3rem;
+      color: var(--accent-color);
+    }
+    .stat-strip-item span:last-child {
+      font-size: 0.72rem;
+      color: var(--muted-clr);
+    }
+    .gender-filter {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 2rem 0 2.5rem;
+    }
+    .gender-btn {
+      background: var(--clr-dark3);
+      border: 1px solid var(--border-clr);
+      border-radius: 50px;
+      color: var(--muted-clr);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      padding: 0.5rem 1.25rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .gender-btn.active, .gender-btn:hover {
+      background: var(--accent-color);
+      color: #111;
+      border-color: var(--accent-color);
+    }
+    .join-banner {
+      background: var(--cta-bg);
+      border: 1px solid var(--border-clr);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .join-banner h3 {
+      font-family: var(--font-head);
+      font-size: 2rem;
+      color: var(--clr-white);
+      margin-bottom: 0.75rem;
+    }
+    .join-banner p {
+      color: var(--muted-clr);
+      font-size: 0.92rem;
+      max-width: 480px;
+      margin: 0 auto 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.jpeg" alt="Wave-House Salon Logo">
+        WAVE-HOUSE<span>SALON</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <li><a href="services.html" id="nav-services">Services</a></li>
+        <li><a href="stylists.html" class="active" id="nav-stylists">Stylists</a></li>
+        <li><a href="booking.html" id="nav-booking">Book Now</a></li>
+        <li><a href="booking.html" class="btn btn-gold nav-cta" id="nav-cta-btn">Book Appointment</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="stylists.html">Stylists</a>
+    <a href="booking.html">Book Now</a>
+    <a href="booking.html" class="btn btn-gold" style="text-align:center;margin-top:0.5rem;">Book Appointment</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header" id="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Our Stylists</span>
+      </nav>
+      <p class="section-label">The Team Behind the Magic</p>
+      <h1>Meet Our Expert Stylists</h1>
+      <p>8 certified professionals. Decades of combined experience. One shared passion — making you look and feel extraordinary.</p>
+    </div>
+  </header>
+
+  <!-- STYLISTS SECTION -->
+  <section class="section" id="stylists-section" aria-labelledby="stylists-heading">
+    <div class="container">
+      <h2 class="section-title text-center" id="stylists-heading" style="margin-bottom:0.25rem;">Our Full Team</h2>
+      <p class="section-sub text-center">Filter by specialisation to find your perfect match.</p>
+
+      <!-- Gender Filter -->
+      <div class="gender-filter" role="group" aria-label="Filter by specialisation">
+        <button class="gender-btn active" id="gbtn-all"      data-g="all">All Stylists</button>
+        <button class="gender-btn"        id="gbtn-women"    data-g="women">Women's Specialists</button>
+        <button class="gender-btn"        id="gbtn-men"      data-g="men">Men's Specialists</button>
+        <button class="gender-btn"        id="gbtn-colour"   data-g="colour">Colour Experts</button>
+        <button class="gender-btn"        id="gbtn-braids"   data-g="braids">Braids &amp; Locs</button>
+      </div>
+
+      <!-- Stylists Grid -->
+      <div class="stylist-grid" id="stylists-grid" style="grid-template-columns:repeat(auto-fill,minmax(270px,1fr));">
+
+        <!-- Amara Nakato -->
+        <article class="stylist-full-card" id="card-amara" data-spec="women">
+          <div class="stylist-avatar f">
+            <span>AN</span>
+            <span class="exp-badge">7 yrs exp</span>
+          </div>
+          <div class="stat-strip">
+            <div class="stat-strip-item"><span>200+</span><span>Clients</span></div>
+            <div class="stat-strip-item"><span>5.0</span><span>Rating</span></div>
+          </div>
+          <div class="stylist-details">
+            <h3>Amara Nakato</h3>
+            <p class="role">Senior Stylist · Women's</p>
+            <p class="bio">Amara has 7 years of experience delivering precision cuts, vivid colour transformations, and beautifully finished protective styles. She specialises in natural hair textures and complex chemical treatments.</p>
+            <div class="tags">
+              <span>Cuts</span><span>Colour</span><span>Braids</span><span>Natural Hair</span><span>Treatments</span>
+            </div>
+            <a href="booking.html?stylist=amara-nakato" class="book-link" id="book-amara">Book with Amara →</a>
+          </div>
+        </article>
+
+        <!-- David Ssemakula -->
+        <article class="stylist-full-card" id="card-david" data-spec="men">
+          <div class="stylist-avatar m">
+            <span>DS</span>
+            <span class="exp-badge">5 yrs exp</span>
+          </div>
+          <div class="stat-strip">
+            <div class="stat-strip-item"><span>350+</span><span>Clients</span></div>
+            <div class="stat-strip-item"><span>4.9</span><span>Rating</span></div>
+          </div>
+          <div class="stylist-details">
+            <h3>David Ssemakula</h3>
+            <p class="role">Master Barber · Men's</p>
+            <p class="bio">David is a certified master barber with 5 years of expertise in sharp fades, crisp tapers, and expert beard sculpting. He is the go-to for clean, precise, head-turning cuts.</p>
+            <div class="tags">
+              <span>Fades</span><span>Tapers</span><span>Beard</span><span>Line-ups</span><span>Shave</span>
+            </div>
+            <a href="booking.html?stylist=david-ssemakula" class="book-link" id="book-david">Book with David →</a>
+          </div>
+        </article>
+
+        <!-- Grace Atim -->
+        <article class="stylist-full-card" id="card-grace" data-spec="women colour">
+          <div class="stylist-avatar f">
+            <span>GA</span>
+            <span class="exp-badge">6 yrs exp</span>
+          </div>
+          <div class="stat-strip">
+            <div class="stat-strip-item"><span>180+</span><span>Clients</span></div>
+            <div class="stat-strip-item"><span>5.0</span><span>Rating</span></div>
+          </div>
+          <div class="stylist-details">
+            <h3>Grace Atim</h3>
+            <p class="role">Colour Specialist · Women's</p>
+            <p class="bio">Grace holds a Level 3 certificate in Hair Colour Technology. She is renowned for seamless balayage blends, bold fashion colours, and repairing previously over-processed hair.</p>
+            <div class="tags">
+              <span>Balayage</span><span>Ombré</span><span>Highlights</span><span>Toning</span><span>Weaves</span>
+            </div>
+            <a href="booking.html?stylist=grace-atim" class="book-link" id="book-grace">Book with Grace →</a>
+          </div>
+        </article>
+
+        <!-- Brian Kato -->
+        <article class="stylist-full-card" id="card-brian" data-spec="men braids">
+          <div class="stylist-avatar m">
+            <span>BK</span>
+            <span class="exp-badge">4 yrs exp</span>
+          </div>
+          <div class="stat-strip">
+            <div class="stat-strip-item"><span>120+</span><span>Clients</span></div>
+            <div class="stat-strip-item"><span>4.8</span><span>Rating</span></div>
+          </div>
+          <div class="stylist-details">
+            <h3>Brian Kato</h3>
+            <p class="role">Barber &amp; Loctician · Both</p>
+            <p class="bio">Brian combines barber training with advanced loc artistry. He handles starter dreadlocks, retwisting, and loc repairs for both men and women, as well as modern men's cuts.</p>
+            <div class="tags">
+              <span>Dreadlocks</span><span>Retwist</span><span>Loc Repair</span><span>Fades</span>
+            </div>
+            <a href="booking.html?stylist=brian-kato" class="book-link" id="book-brian">Book with Brian →</a>
+          </div>
+        </article>
+
+        <!-- Sarah Nambi -->
+        <article class="stylist-full-card" id="card-sarah" data-spec="women braids">
+          <div class="stylist-avatar f">
+            <span>SN</span>
+            <span class="exp-badge">5 yrs exp</span>
+          </div>
+          <div class="stat-strip">
+            <div class="stat-strip-item"><span>230+</span><span>Clients</span></div>
+            <div class="stat-strip-item"><span>5.0</span><span>Rating</span></div>
+          </div>
+          <div class="stylist-details">
+            <h3>Sarah Nambi</h3>
+            <p class="role">Braids &amp; Weaves Specialist · Women's</p>
+            <p class="bio">Sarah is the salon's braiding powerhouse. From knotless braids and Senegalese twists to full weave installations and crochet styles — she does it all with care and speed.</p>
+            <div class="tags">
+              <span>Knotless</span><span>Box Braids</span><span>Crochet</span><span>Weaves</span><span>Twists</span>
+            </div>
+            <a href="booking.html?stylist=sarah-nambi" class="book-link" id="book-sarah">Book with Sarah →</a>
+          </div>
+        </article>
+
+        <!-- James Okello -->
+        <article class="stylist-full-card" id="card-james" data-spec="men">
+          <div class="stylist-avatar m">
+            <span>JO</span>
+            <span class="exp-badge">3 yrs exp</span>
+          </div>
+          <div class="stat-strip">
+            <div class="stat-strip-item"><span>90+</span><span>Clients</span></div>
+            <div class="stat-strip-item"><span>4.7</span><span>Rating</span></div>
+          </div>
+          <div class="stylist-details">
+            <h3>James Okello</h3>
+            <p class="role">Men's Stylist &amp; Barber</p>
+            <p class="bio">James brings fresh energy and creativity to classic men's styles. He excels at curly hair care for men, textured cuts, and modern barber techniques including designs and patterns.</p>
+            <div class="tags">
+              <span>Curly Cuts</span><span>Designs</span><span>Fades</span><span>Grooming</span>
+            </div>
+            <a href="booking.html?stylist=james-okello" class="book-link" id="book-james">Book with James →</a>
+          </div>
+        </article>
+
+        <!-- Patience Akello -->
+        <article class="stylist-full-card" id="card-patience" data-spec="women colour">
+          <div class="stylist-avatar f">
+            <span>PA</span>
+            <span class="exp-badge">8 yrs exp</span>
+          </div>
+          <div class="stat-strip">
+            <div class="stat-strip-item"><span>400+</span><span>Clients</span></div>
+            <div class="stat-strip-item"><span>5.0</span><span>Rating</span></div>
+          </div>
+          <div class="stylist-details">
+            <h3>Patience Akello</h3>
+            <p class="role">Head Stylist &amp; Salon Director · Women's</p>
+            <p class="bio">Patience is the salon's founder and head stylist with 8 years of experience. She oversees quality, trains the team, and still takes select clients for her signature precision cuts and colour work.</p>
+            <div class="tags">
+              <span>Director</span><span>Precision Cuts</span><span>Colour</span><span>Keratin</span>
+            </div>
+            <a href="booking.html?stylist=patience-akello" class="book-link" id="book-patience">Book with Patience →</a>
+          </div>
+        </article>
+
+        <!-- Moses Mugisha -->
+        <article class="stylist-full-card" id="card-moses" data-spec="men braids">
+          <div class="stylist-avatar m">
+            <span>MM</span>
+            <span class="exp-badge">6 yrs exp</span>
+          </div>
+          <div class="stat-strip">
+            <div class="stat-strip-item"><span>160+</span><span>Clients</span></div>
+            <div class="stat-strip-item"><span>4.9</span><span>Rating</span></div>
+          </div>
+          <div class="stylist-details">
+            <h3>Moses Mugisha</h3>
+            <p class="role">Senior Barber &amp; Loctician · Both</p>
+            <p class="bio">Moses has 6 years of experience in both barbering and loc artistry. He handles complex loc journeys from starter to mature, alongside his clean barber work for men of all ages.</p>
+            <div class="tags">
+              <span>Mature Locs</span><span>Starter Locs</span><span>Fades</span><span>Shave</span>
+            </div>
+            <a href="booking.html?stylist=moses-mugisha" class="book-link" id="book-moses">Book with Moses →</a>
+          </div>
+        </article>
+
+      </div><!-- /stylist-grid -->
+
+      <!-- Join the Team Banner -->
+      <div class="join-banner" id="join-team-banner" role="complementary" aria-label="Join our team">
+        <p class="section-label">We're Hiring</p>
+        <h3>Are You a Skilled Stylist?</h3>
+        <p>We're always looking for passionate, certified hair professionals to join the Wave-House Salon family. If you take pride in your craft, we'd love to hear from you.</p>
+        <a href="mailto:careers@wavehousesalon.ug" class="btn btn-outline" id="join-cta">Apply to Join the Team</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="logo.jpeg" alt="Wave-House Salon Logo">
+            WAVE-HOUSE<span>SALON</span>
+          </a>
+          <p>Kampala's premier destination for hair and beauty services, proudly serving men and women with excellence since 2018.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="stylists.html">Our Stylists</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#women">Women's Packages</a></li>
+            <li><a href="services.html#men">Men's Packages</a></li>
+            <li><a href="services.html#braids">Braids &amp; Locs</a></li>
+            <li><a href="services.html#colour">Colour Treatments</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item"><span>Address:</span><span>Plot 14 Kampala Road, Uganda</span></div>
+          <div class="footer-contact-item"><span>Tel:</span><span>+256 700 123 456</span></div>
+          <div class="footer-contact-item"><span>Email:</span><span>hello@wavehousesalon.ug</span></div>
+          <div class="footer-contact-item"><span>Hours:</span><span>Mon–Sat: 8:00 AM – 8:00 PM</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wave-House Salon. All rights reserved.</p>
+        <p>Internet Technologies &amp; Web Programming 1 — Cavendish University Uganda</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileNav.setAttribute('aria-hidden', !isOpen);
+    });
+
+    // Stylist filter
+    const gBtns  = document.querySelectorAll('.gender-btn');
+    const sCards = document.querySelectorAll('.stylist-full-card');
+
+    gBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        gBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const g = btn.getAttribute('data-g');
+        sCards.forEach(card => {
+          const spec = card.getAttribute('data-spec') || '';
+          card.style.display = (g === 'all' || spec.includes(g)) ? 'block' : 'none';
+        });
+      });
+    });
+
+  </script>
+
+</body>
+</html>

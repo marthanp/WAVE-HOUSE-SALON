@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book a hair or beauty appointment at Wave-House Salon Kampala. Choose your service, stylist, and preferred date and time." />
+  <title>Book Appointment | Wave-House Salon</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Theme Switcher Script (Head inclusion prevents flash) -->
+  <script src="theme.js"></script>
+  <style>
+    /* Extra booking-page styles */
+    .steps-row {
+      display: flex;
+      gap: 0;
+      align-items: center;
+      margin: 2.5rem 0 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-direction: column;
+      text-align: center;
+      min-width: 90px;
+    }
+    .step-num {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.12);
+      border: 1.5px solid rgba(201,168,76,0.4);
+      color: var(--accent-color);
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-label { font-size: 0.75rem; color: var(--muted-clr); margin-top: 0.25rem; }
+    .step-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(201,168,76,0.2);
+      min-width: 30px;
+      margin-bottom: 1.5rem;
+    }
+    .policy-box {
+      background: rgba(201,168,76,0.06);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .policy-box h4 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--accent-color);
+      margin-bottom: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .policy-box ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .policy-box ul li {
+      font-size: 0.82rem;
+      color: var(--muted-clr);
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .policy-box ul li::before { content: '•'; color: var(--accent-color); }
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--muted-clr);
+    }
+    .stars { color: var(--accent-color); letter-spacing: 1px; }
+    input[type="date"]::-webkit-calendar-picker-indicator,
+    input[type="time"]::-webkit-calendar-picker-indicator {
+      filter: invert(0.5); /* Responsive to theme */
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.jpeg" alt="Wave-House Salon Logo">
+        WAVE-HOUSE<span>SALON</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <li><a href="services.html" id="nav-services">Services</a></li>
+        <li><a href="stylists.html" id="nav-stylists">Stylists</a></li>
+        <li><a href="booking.html" class="active" id="nav-booking">Book Now</a></li>
+        <li><a href="booking.html" class="btn btn-gold nav-cta" id="nav-cta-btn">Book Appointment</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="stylists.html">Stylists</a>
+    <a href="booking.html">Book Now</a>
+    <a href="booking.html" class="btn btn-gold" style="text-align:center;margin-top:0.5rem;">Book Appointment</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header" id="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Book Appointment</span>
+      </nav>
+      <p class="section-label">Reserve Your Slot</p>
+      <h1>Book an Appointment</h1>
+      <p>Fill in the form below and we'll confirm your booking within minutes.</p>
+
+      <!-- Steps -->
+      <div class="steps-row" aria-label="Booking steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <span class="step-label">Your Details</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <span class="step-label">Choose Service</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <span class="step-label">Pick Stylist</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <span class="step-label">Date &amp; Time</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <span class="step-label">Confirm</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BOOKING SECTION -->
+  <section class="section booking-section" id="booking-section" aria-labelledby="booking-form-title">
+    <div class="container">
+      <div class="booking-wrapper">
+
+        <!-- LEFT: Info Panel -->
+        <aside aria-label="Booking information">
+          <h3 id="booking-form-title">Appointment Information</h3>
+          <p>All bookings are confirmed via phone or email. Please arrive 5 minutes before your scheduled time.</p>
+
+          <div class="info-items" id="info-items">
+            <div class="info-item">
+              <span>Address:</span>
+              <span>Plot 14 Kampala Road, Kampala, Uganda</span>
+            </div>
+            <div class="info-item">
+              <span>Tel:</span>
+              <span>+256 700 123 456</span>
+            </div>
+            <div class="info-item">
+              <span>Email:</span>
+              <span>hello@wavehousesalon.ug</span>
+            </div>
+            <div class="info-item">
+              <span>Hours:</span>
+              <span>Mon – Sat &nbsp;|&nbsp; 8:00 AM – 8:00 PM</span>
+            </div>
+            <div class="info-item">
+              <span>Duration:</span>
+              <span>Sessions from 30 min to 3+ hrs</span>
+            </div>
+          </div>
+
+          <div class="policy-box" id="booking-policies">
+            <h4>Booking Policies</h4>
+            <ul>
+              <li>Cancel or reschedule at least 2 hours in advance.</li>
+              <li>A 50% deposit may be required for services above UGX 100k.</li>
+              <li>Walk-ins are welcome but subject to availability.</li>
+              <li>Children under 10 must be accompanied by a guardian.</li>
+              <li>We reserve the right to decline late arrivals (15+ min).</li>
+            </ul>
+          </div>
+
+          <div class="rating-row" id="salon-rating">
+            <span class="stars">5.0 / 5.0</span>
+            <span>Rated by 200+ clients on Google</span>
+          </div>
+        </aside>
+
+        <!-- RIGHT: Booking Form -->
+        <div class="booking-form-card" id="booking-form-card">
+          <form id="booking-form" novalidate aria-labelledby="booking-form-title">
+            <div class="form-grid">
+
+              <!-- Full Name -->
+              <div class="form-group" id="group-fullname">
+                <label for="fullname">Full Name <span style="color:var(--accent-color)">*</span></label>
+                <input
+                  type="text"
+                  id="fullname"
+                  name="fullname"
+                  placeholder="e.g. Aisha Namukasa"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+
+              <!-- Phone -->
+              <div class="form-group" id="group-phone">
+                <label for="phone">Phone Number <span style="color:var(--accent-color)">*</span></label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+256 7XX XXX XXX"
+                  required
+                  autocomplete="tel"
+                />
+              </div>
+
+              <!-- Email -->
+              <div class="form-group form-col-2" id="group-email">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                />
+              </div>
+
+              <!-- Gender -->
+              <div class="form-group" id="group-gender">
+                <label for="gender">Gender <span style="color:var(--clr-gold)">*</span></label>
+                <select id="gender" name="gender" required>
+                  <option value="" disabled selected>Select gender</option>
+                  <option value="female">Female</option>
+                  <option value="male">Male</option>
+                  <option value="prefer-not">Prefer not to say</option>
+                </select>
+              </div>
+
+              <!-- Service Category -->
+              <div class="form-group" id="group-category">
+                <label for="service-category">Service Category <span style="color:var(--clr-gold)">*</span></label>
+                <select id="service-category" name="service-category" required>
+                  <option value="" disabled selected>Select a category</option>
+                  <optgroup label="Women's Services">
+                    <option value="wash-blowout">Wash &amp; Blowout — UGX 45,000</option>
+                    <option value="colour-highlights">Colour &amp; Highlights — UGX 120,000</option>
+                    <option value="balayage">Balayage &amp; Ombré — UGX 160,000</option>
+                    <option value="box-braids">Box Braids — UGX 80,000</option>
+                    <option value="knotless-braids">Knotless Braids — UGX 100,000</option>
+                    <option value="weave-install">Weave Installation — UGX 90,000</option>
+                  </optgroup>
+                  <optgroup label="Men's Services">
+                    <option value="classic-cut">Classic Haircut — UGX 30,000</option>
+                    <option value="fade-cut">Fade &amp; Taper — UGX 35,000</option>
+                    <option value="beard-trim">Beard Trim &amp; Shape — UGX 20,000</option>
+                    <option value="cut-beard-combo">Cut &amp; Beard Combo — UGX 45,000</option>
+                  </optgroup>
+                  <optgroup label="Unisex">
+                    <option value="dreadlock-install">Dreadlock Installation — UGX 150,000</option>
+                    <option value="loc-retwist">Loc Retwist — UGX 60,000</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <!-- Preferred Stylist -->
+              <div class="form-group" id="group-stylist">
+                <label for="stylist">Preferred Stylist <span style="color:var(--clr-gold)">*</span></label>
+                <select id="stylist" name="stylist" required>
+                  <option value="" disabled selected>Select a stylist</option>
+                  <option value="amara-nakato">Amara Nakato — Senior Stylist (Women's)</option>
+                  <option value="grace-atim">Grace Atim — Colour Specialist (Women's)</option>
+                  <option value="sarah-nambi">Sarah Nambi — Braids &amp; Weaves Specialist</option>
+                  <option value="david-ssemakula">David Ssemakula — Master Barber (Men's)</option>
+                  <option value="brian-kato">Brian Kato — Barber &amp; Loctician</option>
+                  <option value="james-okello">James Okello — Men's Stylist</option>
+                  <option value="no-preference">No Preference (Next Available)</option>
+                </select>
+              </div>
+
+              <!-- Interactive Calendar Section -->
+              <section class="calendar-section" id="booking-calendar">
+                <h3 class="calendar-header">Select Your Appointment Time</h3>
+                <div class="calendar-container" id="calendar-grid">
+                  <!-- JS will populate dates here -->
+                </div>
+                
+                <div id="slots-wrapper" style="display:none;">
+                  <h4 style="font-size:0.9rem; color:var(--muted-clr); margin-bottom:0.5rem;">Available Slots</h4>
+                  <div class="slots-container" id="time-slots">
+                    <!-- JS will populate slots here -->
+                  </div>
+                </div>
+
+                <!-- Hidden inputs to store selection for form submission -->
+                <input type="hidden" id="appt-date" name="appt-date" required>
+                <input type="hidden" id="appt-time" name="appt-time" required>
+              </section>
+
+              <!-- Special Requests -->
+              <div class="form-group form-col-2" id="group-notes">
+                <label for="notes">Special Requests / Notes</label>
+                <textarea
+                  id="notes"
+                  name="notes"
+                  placeholder="Any allergies, preferences, or additional details..."
+                ></textarea>
+              </div>
+
+              <!-- How did you hear -->
+              <div class="form-group form-col-2" id="group-referral">
+                <label for="referral">How did you hear about us?</label>
+                <select id="referral" name="referral">
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="google">Google Search</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="friend">Friend / Family Referral</option>
+                  <option value="walk-in">Walk-in / Signage</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <!-- Terms -->
+              <div class="form-group form-col-2" id="group-terms" style="flex-direction:row;align-items:center;gap:0.75rem;">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  name="terms"
+                  required
+                  style="width:18px;height:18px;accent-color:var(--clr-gold);flex-shrink:0;"
+                />
+                <label for="terms" style="font-size:0.83rem;color:var(--clr-muted);cursor:pointer;">
+                  I agree to the salon's booking policies and understand that cancellations must be made at least 2 hours in advance.
+                </label>
+              </div>
+
+              <!-- Submit -->
+              <div class="form-col-2" style="grid-column:span 1;">
+                <button type="submit" class="btn btn-gold form-submit" id="submit-btn">
+                  Confirm My Appointment
+                </button>
+              </div>
+
+            </div><!-- /form-grid -->
+
+            <p class="form-note" id="form-note">
+              Your information is private and only used to manage your booking.
+            </p>
+
+            <!-- Success Message -->
+            <div class="success-msg" id="success-msg" role="alert" aria-live="polite">
+              Booking received! We'll contact you shortly on the number provided to confirm your slot.
+            </div>
+
+          </form>
+        </div>
+
+      </div><!-- /booking-wrapper -->
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="logo.jpeg" alt="Wave-House Salon Logo">
+            WAVE-HOUSE<span>SALON</span>
+          </a>
+          <p>Kampala's premier destination for hair and beauty services, proudly serving men and women since 2018.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="stylists.html">Our Stylists</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html#women">Women's Packages</a></li>
+            <li><a href="services.html#men">Men's Packages</a></li>
+            <li><a href="services.html#braids">Braids &amp; Locs</a></li>
+            <li><a href="services.html#colour">Colour Treatments</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item"><span>Address:</span><span>Plot 14 Kampala Road, Uganda</span></div>
+          <div class="footer-contact-item"><span>Tel:</span><span>+256 700 123 456</span></div>
+          <div class="footer-contact-item"><span>Email:</span><span>hello@wavehousesalon.ug</span></div>
+          <div class="footer-contact-item"><span>Hours:</span><span>Mon–Sat: 8:00 AM – 8:00 PM</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wave-House Salon. All rights reserved.</p>
+        <p>Internet Technologies &amp; Web Programming 1 — Cavendish University Uganda</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Select Elements ---
+    const hamburger      = document.getElementById('hamburger-btn');
+    const mobileNav      = document.getElementById('mobile-nav');
+    const calendarGrid   = document.getElementById('calendar-grid');
+    const slotsWrapper   = document.getElementById('slots-wrapper');
+    const timeSlots      = document.getElementById('time-slots');
+    const apptDateInput  = document.getElementById('appt-date');
+    const apptTimeInput  = document.getElementById('appt-time');
+    const stylistSelect  = document.getElementById('stylist');
+    const submitBtn      = document.getElementById('submit-btn');
+    const form           = document.getElementById('booking-form');
+    const successMsg     = document.getElementById('success-msg');
+
+    // --- Mobile menu ---
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+        mobileNav.setAttribute('aria-hidden', !isOpen);
+      });
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // --- Interactive Calendar Logic ---
+    const bookedAppointments = [
+      { date: new Date().toISOString().split('T')[0], time: '10:00', stylist: 'amara-nakato' },
+      { date: new Date().toISOString().split('T')[0], time: '14:00', stylist: 'amara-nakato' }
+    ];
+
+    function initCalendar() {
+      if (!calendarGrid) return;
+      calendarGrid.innerHTML = ''; // Clear fallback
+      const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+      const today = new Date();
+      
+      for (let i = 0; i < 7; i++) {
+        const date = new Date();
+        date.setDate(today.getDate() + i);
+        if (date.getDay() === 0) continue; // Skip Sundays
+
+        const dateString = date.toISOString().split('T')[0];
+        const dayCard = document.createElement('div');
+        dayCard.className = 'calendar-day';
+        dayCard.innerHTML = `<span class="day-name">${days[date.getDay()]}</span><span class="day-date">${date.getDate()}</span>`;
+        
+        dayCard.addEventListener('click', () => {
+          document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('active'));
+          dayCard.classList.add('active');
+          apptDateInput.value = dateString;
+          showTimeSlots(dateString);
+        });
+        calendarGrid.appendChild(dayCard);
+      }
+    }
+
+    function showTimeSlots(date) {
+      if (!slotsWrapper || !timeSlots) return;
+      slotsWrapper.style.display = 'block';
+      timeSlots.innerHTML = '';
+      const stylist = stylistSelect.value;
+      const hours = ['08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
+      
+      hours.forEach(time => {
+        const isBooked = bookedAppointments.some(app => app.date === date && app.time === time && app.stylist === stylist);
+        const slot = document.createElement('div');
+        slot.className = `time-slot ${isBooked ? 'booked' : 'available'}`;
+        slot.textContent = time;
+        
+        if (!isBooked) {
+          slot.addEventListener('click', () => {
+            document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+            slot.classList.add('selected');
+            apptTimeInput.value = time;
+          });
+        }
+        timeSlots.appendChild(slot);
+      });
+      apptTimeInput.value = '';
+    }
+
+    if (stylistSelect) {
+      stylistSelect.addEventListener('change', () => {
+        if (apptDateInput.value) showTimeSlots(apptDateInput.value);
+      });
+    }
+
+    initCalendar();
+
+    // --- Pre-fill service from URL ---
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service');
+    if (serviceParam) {
+      const select = document.getElementById('service-category');
+      if (select) {
+        const option = select.querySelector(`option[value="${serviceParam}"]`);
+        if (option) { option.selected = true; }
+      }
+    }
+
+    // --- Form submission ---
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const required = form.querySelectorAll('[required]');
+        let valid = true;
+        required.forEach(field => {
+          if (!field.value.trim() && field.type !== 'checkbox') {
+            field.style.borderColor = '#e05a5a';
+            valid = false;
+          } else if (field.type === 'checkbox' && !field.checked) {
+            valid = false;
+          } else {
+            field.style.borderColor = '';
+          }
+        });
+
+        if (!valid) {
+          submitBtn.textContent = 'Please select a date and time';
+          submitBtn.style.background = '#444';
+          setTimeout(() => {
+            submitBtn.textContent = 'Confirm My Appointment';
+            submitBtn.style.background = '';
+          }, 2500);
+          return;
+        }
+
+        submitBtn.textContent = 'Submitting...';
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+          bookedAppointments.push({
+            date: apptDateInput.value,
+            time: apptTimeInput.value,
+            stylist: stylistSelect.value
+          });
+
+          successMsg.style.display = 'block';
+          form.reset();
+          document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('active'));
+          slotsWrapper.style.display = 'none';
+          submitBtn.textContent = 'Confirm My Appointment';
+          submitBtn.disabled = false;
+          successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 1200);
+      });
+    }
+
+  </script>
+
+</body>
+</html>

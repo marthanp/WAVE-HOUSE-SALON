@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse Wave-House Salon's full service catalog — premium packages for men and women including cuts, colour, braids, and grooming." />
+  <title>Services | Wave-House Salon</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <!-- Theme Switcher Script (Head inclusion prevents flash) -->
+  <script src="theme.js"></script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="logo.jpeg" alt="Wave-House Salon Logo">
+        WAVE-HOUSE<span>SALON</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" id="nav-home">Home</a></li>
+        <li><a href="services.html" class="active" id="nav-services">Services</a></li>
+        <li><a href="stylists.html" id="nav-stylists">Stylists</a></li>
+        <li><a href="booking.html" id="nav-booking">Book Now</a></li>
+        <li><a href="booking.html" class="btn btn-gold nav-cta" id="nav-cta-btn">Book Appointment</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+      <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="stylists.html">Stylists</a>
+    <a href="booking.html">Book Now</a>
+    <a href="booking.html" class="btn btn-gold" style="text-align:center;margin-top:0.5rem;">Book Appointment</a>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header" id="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Services</span>
+      </nav>
+      <p class="section-label">What We Offer</p>
+      <h1>Our Service Catalog</h1>
+      <p>Transparent pricing. Premium results. Choose a package that fits your style — for men and women.</p>
+    </div>
+  </header>
+
+  <!-- FILTER ROW -->
+  <section class="section-sm" id="services-section" aria-labelledby="services-heading">
+    <div class="container">
+      <h2 class="section-title" id="services-heading" style="text-align:center;margin-bottom:0.5rem;">All Packages</h2>
+      <p class="section-sub text-center">Use the filters to browse by category or gender.</p>
+
+      <div class="filter-row" role="group" aria-label="Filter services">
+        <button class="filter-btn active" id="filter-all"     data-filter="all">All Services</button>
+        <button class="filter-btn"        id="filter-women"   data-filter="women">Women ♀</button>
+        <button class="filter-btn"        id="filter-men"     data-filter="men">Men ♂</button>
+        <button class="filter-btn"        id="filter-colour"  data-filter="colour">Colour</button>
+        <button class="filter-btn"        id="filter-braids"  data-filter="braids">Braids &amp; Locs</button>
+        <button class="filter-btn"        id="filter-grooming" data-filter="grooming">Grooming</button>
+      </div>
+
+      <!-- ── CARDS GRID ── -->
+      <div class="cards-grid" id="services-cards-grid">
+
+        <!-- WOMEN'S PACKAGES -->
+        <article class="service-pkg-card" id="pkg-wash-blowout" data-category="women" data-id="wash-blowout">
+          <div class="pkg-header">
+            <div class="pkg-icon">W</div>
+            <span class="pkg-badge">Women</span>
+            <h3>Wash &amp; Blowout</h3>
+            <div class="pkg-price">UGX 45,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Deep cleansing shampoo</li>
+              <li>Moisturising conditioner treatment</li>
+              <li>Professional blow-dry &amp; style</li>
+              <li>Scalp massage</li>
+            </ul>
+            <a href="booking.html?service=wash-blowout" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-pkg-card" id="pkg-colour" data-category="women colour" data-id="colour-highlights">
+          <div class="pkg-header">
+            <div class="pkg-icon">C</div>
+            <span class="pkg-badge">Women · Colour</span>
+            <h3>Colour &amp; Highlights</h3>
+            <div class="pkg-price">UGX 120,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Full colour or highlights of choice</li>
+              <li>Toning &amp; glossing treatment</li>
+              <li>Wash &amp; blowout included</li>
+              <li>Colour consultation</li>
+            </ul>
+            <a href="booking.html?service=colour-highlights" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-pkg-card" id="pkg-balayage" data-category="women colour" data-id="balayage">
+          <div class="pkg-header">
+            <div class="pkg-icon">B</div>
+            <span class="pkg-badge">Women · Colour</span>
+            <h3>Balayage &amp; Ombré</h3>
+            <div class="pkg-price">UGX 160,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Hand-painted balayage or ombré</li>
+              <li>Toner for seamless blend</li>
+              <li>Deep conditioning mask</li>
+              <li>Blowout &amp; finish styling</li>
+            </ul>
+            <a href="booking.html?service=balayage" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-pkg-card" id="pkg-box-braids" data-category="women braids" data-id="box-braids">
+          <div class="pkg-header">
+            <div class="pkg-icon">BB</div>
+            <span class="pkg-badge">Women · Braids</span>
+            <h3>Box Braids</h3>
+            <div class="pkg-price">UGX 80,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Classic protective box braids</li>
+              <li>Any length (short / medium / long)</li>
+              <li>Pre-stretch hair extension optional</li>
+              <li>Scalp oiling &amp; edge lay</li>
+            </ul>
+            <a href="booking.html?service=box-braids" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-pkg-card" id="pkg-knotless" data-category="women braids" data-id="knotless-braids">
+          <div class="pkg-header">
+            <div class="pkg-icon">KB</div>
+            <span class="pkg-badge">Women · Braids</span>
+            <h3>Knotless Braids</h3>
+            <div class="pkg-price">UGX 100,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Tension-free knotless technique</li>
+              <li>Lightweight &amp; natural-looking start</li>
+              <li>Any size or length</li>
+              <li>Beads or curled ends optional</li>
+            </ul>
+            <a href="booking.html?service=knotless-braids" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-pkg-card" id="pkg-weave" data-category="women" data-id="weave-install">
+          <div class="pkg-header">
+            <div class="pkg-icon">WI</div>
+            <span class="pkg-badge">Women</span>
+            <h3>Weave Installation</h3>
+            <div class="pkg-price">UGX 90,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Cornrow foundation braid</li>
+              <li>Sew-in or glue-in options</li>
+              <li>Leave-out blend &amp; style</li>
+              <li>Lace closure fitting available</li>
+            </ul>
+            <a href="booking.html?service=weave-install" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <!-- MEN'S PACKAGES -->
+        <article class="service-pkg-card" id="pkg-classic-cut" data-category="men grooming" data-id="classic-cut">
+          <div class="pkg-header">
+            <div class="pkg-icon">M</div>
+            <span class="pkg-badge">Men</span>
+            <h3>Classic Haircut</h3>
+            <div class="pkg-price">UGX 30,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Precision scissor or clipper cut</li>
+              <li>Wash &amp; towel dry</li>
+              <li>Style &amp; finish</li>
+              <li>Clean neck shave</li>
+            </ul>
+            <a href="booking.html?service=classic-cut" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-pkg-card" id="pkg-fade" data-category="men grooming" data-id="fade-cut">
+          <div class="pkg-header">
+            <div class="pkg-icon">F</div>
+            <span class="pkg-badge">Men</span>
+            <h3>Fade &amp; Taper</h3>
+            <div class="pkg-price">UGX 35,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Low / mid / high fade of choice</li>
+              <li>Blended taper at neckline</li>
+              <li>Line-up &amp; edge detail</li>
+              <li>Styling product finish</li>
+            </ul>
+            <a href="booking.html?service=fade-cut" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-pkg-card" id="pkg-beard" data-category="men grooming" data-id="beard-trim">
+          <div class="pkg-header">
+            <div class="pkg-icon">G</div>
+            <span class="pkg-badge">Men · Grooming</span>
+            <h3>Beard Trim &amp; Shape</h3>
+            <div class="pkg-price">UGX 20,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Outline &amp; sculpt shaping</li>
+              <li>Hot towel treatment</li>
+              <li>Moisturising beard balm</li>
+              <li>Clean cheek line shave</li>
+            </ul>
+            <a href="booking.html?service=beard-trim" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-pkg-card" id="pkg-combo" data-category="men grooming" data-id="cut-beard-combo">
+          <div class="pkg-header">
+            <div class="pkg-icon">CB</div>
+            <span class="pkg-badge">Men · Best Value</span>
+            <h3>Cut &amp; Beard Combo</h3>
+            <div class="pkg-price">UGX 45,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Full haircut (any style)</li>
+              <li>Beard trim &amp; shaping</li>
+              <li>Hot towel &amp; razor finish</li>
+              <li>Complimentary scalp massage</li>
+            </ul>
+            <a href="booking.html?service=cut-beard-combo" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <!-- UNISEX / BRAIDS & LOCS -->
+        <article class="service-pkg-card" id="pkg-dreadlocks" data-category="braids" data-id="dreadlock-install">
+          <div class="pkg-header">
+            <div class="pkg-icon">DL</div>
+            <span class="pkg-badge">Unisex · Locs</span>
+            <h3>Dreadlock Install</h3>
+            <div class="pkg-price">UGX 150,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Comb-twist or interlocking method</li>
+              <li>Starter locs for all hair types</li>
+              <li>Scalp treatment included</li>
+              <li>Aftercare advice &amp; kit</li>
+            </ul>
+            <a href="booking.html?service=dreadlock-install" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+        <article class="service-pkg-card" id="pkg-retwist" data-category="braids" data-id="loc-retwist">
+          <div class="pkg-header">
+            <div class="pkg-icon">RT</div>
+            <span class="pkg-badge">Unisex · Locs</span>
+            <h3>Loc Retwist</h3>
+            <div class="pkg-price">UGX 60,000 <span>/ session</span></div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li>Full retwist maintenance</li>
+              <li>Wash &amp; deep condition</li>
+              <li>Loc moisturising treatment</li>
+              <li>Root tightening</li>
+            </ul>
+            <a href="booking.html?service=loc-retwist" class="btn btn-gold" style="width:100%;text-align:center;">Book This Service</a>
+          </div>
+        </article>
+
+      </div><!-- /cards-grid -->
+
+      <!-- CTA Strip -->
+      <div class="cta-strip" style="text-align:center;margin-top:3rem;border-radius:var(--radius);">
+        <p class="section-label">Ready to get started?</p>
+        <h3 style="font-family:var(--font-head);font-size:2rem;color:var(--clr-white);margin-bottom:0.75rem;">Book Your Session Now</h3>
+        <p style="color:var(--muted-clr);margin-bottom:1.5rem;">Pick any service above, choose your stylist, and reserve your preferred time slot online.</p>
+        <a href="booking.html" class="btn btn-gold" id="services-book-cta">Make a Reservation</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <img src="logo.jpeg" alt="Wave-House Salon Logo">
+            WAVE-HOUSE<span>SALON</span>
+          </a>
+          <p>Kampala's premier destination for hair and beauty services, proudly serving men and women with excellence since 2018.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="stylists.html">Our Stylists</a></li>
+            <li><a href="booking.html">Book Appointment</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Women's Packages</a></li>
+            <li><a href="services.html">Men's Packages</a></li>
+            <li><a href="services.html">Braids &amp; Locs</a></li>
+            <li><a href="services.html">Colour Treatments</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <div class="footer-contact-item"><span>Address:</span><span>Plot 14 Kampala Road, Uganda</span></div>
+          <div class="footer-contact-item"><span>Tel:</span><span>+256 700 123 456</span></div>
+          <div class="footer-contact-item"><span>Email:</span><span>hello@wavehousesalon.ug</span></div>
+          <div class="footer-contact-item"><span>Hours:</span><span>Mon–Sat: 8:00 AM – 8:00 PM</span></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Wave-House Salon. All rights reserved.</p>
+        <p>Internet Technologies &amp; Web Programming 1 — Cavendish University Uganda</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    hamburger.addEventListener('click', () => {
+      const isOpen = mobileNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      mobileNav.setAttribute('aria-hidden', !isOpen);
+    });
+
+    // Filter buttons
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards      = document.querySelectorAll('.service-pkg-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+        cards.forEach(card => {
+          const cats = card.getAttribute('data-category') || '';
+          if (filter === 'all' || cats.includes(filter)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Pre-select filter from URL hash (e.g. services.html#women)
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+      const matchBtn = document.querySelector(`.filter-btn[data-filter="${hash}"]`);
+      if (matchBtn) matchBtn.click();
+    }
+
+  </script>
+
+</body>
+</html>
