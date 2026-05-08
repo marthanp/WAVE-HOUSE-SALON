@@ -76,8 +76,6 @@
         <button class="filter-btn"        id="filter-images"   data-filter="images">Images</button>
       </div>
 
-      <!-- ── CARDS GRID ── -->
-      <div class="cards-grid" id="services-cards-grid">
 
 
       <!-- ── HAIRSTYLE GALLERY (Hidden by Default) ── -->
@@ -140,6 +138,8 @@
         </figure>
       </div>
 
+      <!-- ── SERVICE PACKAGES GRID ── -->
+      <div class="cards-grid" id="packages-grid">
         <!-- WOMEN'S PACKAGES -->
         <article class="service-pkg-card" id="pkg-wash-blowout" data-category="women" data-id="wash-blowout">
           <div class="pkg-header">
@@ -436,14 +436,14 @@
         btn.classList.add('active');
 
         const filter = btn.getAttribute('data-filter');
-        const cardsGrid = document.getElementById('services-cards-grid');
+        const packagesGrid = document.getElementById('packages-grid');
         const galleryGrid = document.getElementById('hairstyle-gallery');
 
         if (filter === 'images') {
-          cardsGrid.style.display = 'none';
+          packagesGrid.style.display = 'none';
           galleryGrid.style.display = 'grid';
         } else {
-          cardsGrid.style.display = 'grid';
+          packagesGrid.style.display = 'grid';
           galleryGrid.style.display = 'none';
 
           cards.forEach(card => {
