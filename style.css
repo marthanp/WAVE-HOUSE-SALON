@@ -542,7 +542,7 @@ ul { list-style: none; }
 }
 .stylist-placeholder {
   width: 100%;
-  height: 240px;
+  height: 350px;
   background: var(--card-bg);
   display: flex;
   align-items: center;
@@ -559,7 +559,7 @@ ul { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: center 10%;
 }
 .stylist-info { padding: 1.5rem; }
 .stylist-info h3 {
