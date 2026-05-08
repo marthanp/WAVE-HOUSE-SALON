@@ -210,6 +210,7 @@ ul { list-style: none; }
   transition: color var(--transition);
 }
 .nav-links a:hover, .nav-links a.active { color: var(--accent-color); }
+.nav-links a.btn { color: #111; }
 .nav-cta { margin-left: 1rem; }
 .hamburger {
   display: flex;
@@ -248,6 +249,7 @@ ul { list-style: none; }
   transition: color var(--transition);
 }
 .mobile-nav a:hover { color: var(--accent-color); }
+.mobile-nav a.btn { color: #111; }
 
 /* ===========================
    HERO SECTION
