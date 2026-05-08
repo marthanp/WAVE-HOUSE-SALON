@@ -317,7 +317,7 @@
         </article>
 
         <!-- Brian Kato -->
-        <article class="stylist-full-card" id="card-brian" data-spec="men braids">
+        <article class="stylist-full-card" id="card-brian" data-spec="men women braids">
           <div class="stylist-avatar m">
             <img src="assets/images/men/male stylist 2.jpg" alt="Brian Kato">
             <span class="exp-badge">4 yrs exp</span>
@@ -401,7 +401,7 @@
         </article>
 
         <!-- Moses Mugisha -->
-        <article class="stylist-full-card" id="card-moses" data-spec="men braids">
+        <article class="stylist-full-card" id="card-moses" data-spec="men women braids">
           <div class="stylist-avatar m">
             <img src="assets/images/men/male stylist 4.jpg" alt="Moses Mugisha">
             <span class="exp-badge">6 yrs exp</span>
@@ -498,8 +498,8 @@
         btn.classList.add('active');
         const g = btn.getAttribute('data-g');
         sCards.forEach(card => {
-          const spec = card.getAttribute('data-spec') || '';
-          card.style.display = (g === 'all' || spec.includes(g)) ? 'block' : 'none';
+          const specs = (card.getAttribute('data-spec') || '').split(' ');
+          card.style.display = (g === 'all' || specs.includes(g)) ? 'block' : 'none';
         });
       });
     });
