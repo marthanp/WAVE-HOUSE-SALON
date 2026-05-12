@@ -1,5 +1,5 @@
 # ✂️ Wave-House Salon — Salon Management System
-### Cavendish University Uganda | Internet Technologies & Web Programming 1
+# Wave-House Salon Management System
 
 ---
 
@@ -80,4 +80,4 @@ The UI follows a **Mobile-First** approach with a luxury aesthetic:
 
 ---
 
-*Submitted for: Internet Technologies & Web Programming 1 | Cavendish University Uganda*
+*Wave-House Salon — Professional Project*
