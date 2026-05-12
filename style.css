@@ -39,29 +39,7 @@
   --clr-dark3:   #e0e0e0;
 }
 
-[data-theme="dark"] {
-  --bg-color:     #111111;
-  --text-color:   #e8e8e8;
-  --accent-color: #c9a84c;
-  --card-bg:      #1e1e1e;
-  --nav-bg:       rgba(17,17,17,0.92);
-  --border-clr:   rgba(201,168,76,0.15);
-  --muted-clr:    #999999;
-  --shadow:       0 8px 32px rgba(0,0,0,0.45);
 
-  /* Section Backgrounds */
-  --hero-bg:     linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #0f0e0b 100%);
-  --footer-bg:   #0d0d0d;
-  --header-bg:   linear-gradient(135deg, #0d0d0d, #1a1a1a);
-  --cta-bg:      linear-gradient(135deg, #1a1408, #1e1a0e);
-
-  /* Consistency variables */
-  --clr-white:   #ffffff;
-  --clr-card:    #1e1e1e;
-  --clr-muted:   #999999;
-  --clr-dark3:   #252525;
-  --clr-gold:    #c9a84c;
-}
 
 /* --- Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
