@@ -455,6 +455,8 @@ ul { list-style: none; }
   border-radius: var(--radius);
   overflow: hidden;
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 .service-pkg-card:hover {
   border-color: rgba(177,151,196,0.45);
@@ -494,7 +496,12 @@ ul { list-style: none; }
   font-family: var(--font-body); 
   opacity: 0.85;
 }
-.pkg-body { padding: 1.75rem; }
+.pkg-body { 
+  padding: 1.75rem; 
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 .pkg-features { display: flex; flex-direction: column; gap: 0.65rem; margin-bottom: 1.5rem; }
 .pkg-features li {
   font-size: 0.9rem;
@@ -504,6 +511,9 @@ ul { list-style: none; }
   gap: 0.5rem;
 }
 .pkg-features li::before { content: '✓'; color: var(--accent-color); font-weight: 700; }
+.pkg-body .btn {
+  margin-top: auto;
+}
 .pkg-badge {
   display: inline-block;
   color: var(--accent-color);
