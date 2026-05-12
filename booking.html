@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="style.css" />
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-
+  <!-- Theme Switcher Script (Head inclusion prevents flash) -->
+  <script src="theme.js"></script>
   <style>
     /* Extra booking-page styles */
     .steps-row {
@@ -102,6 +103,11 @@
         <li><a href="booking.html" class="active" id="nav-booking">Book Now</a></li>
         <li><a href="booking.html" class="btn btn-gold nav-cta" id="nav-cta-btn">Book Appointment</a></li>
 
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Mode">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
       </ul>
       <button class="hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
