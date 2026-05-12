@@ -1,9 +1,8 @@
-# ✂️ Wave-House Salon — Salon Management System
 # Wave-House Salon Management System
 
 ---
 
-## 📋 Problem Statement
+## Problem Statement
 
 Most local salons in Uganda still rely on **manual, paper-based booking and walk-in systems**. This creates:
 
@@ -16,7 +15,7 @@ Most local salons in Uganda still rely on **manual, paper-based booking and walk
 
 ---
 
-## 🎯 Target Users
+## Target Users
 
 | User Type | Needs |
 |-----------|-------|
@@ -26,7 +25,7 @@ Most local salons in Uganda still rely on **manual, paper-based booking and walk
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 WAVE-HOUSE/
@@ -40,7 +39,7 @@ WAVE-HOUSE/
 
 ---
 
-## 🚀 Phase Breakdown
+## Phase Breakdown
 
 ### Phase 1 — Initial Skeleton
 - [x] Semantic `index.html` with navigation, hero section, and footer
@@ -53,28 +52,28 @@ WAVE-HOUSE/
 - [x] `stylists.html` — Stylist profiles gallery
 
 ### Phase 3 — Advanced Interactivity & UX (New)
-- [x] **Persistent Light/Dark Mode** — Toggle between themes using CSS Variables and LocalStorage
+- [x] **Light Mode Branding** — Premium light aesthetic using CSS Variables
 - [x] **Interactive Booking Calendar** — Real-time availability grid with double-booking prevention
 - [x] **Font Awesome Integration** — Professional iconography across the platform
 
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **HTML5** — Semantic markup (`<nav>`, `<header>`, `<section>`, `<footer>`, `<article>`)
 - **CSS3** — Custom properties, Flexbox, CSS Grid, Media Queries (Mobile-First)
 - **Google Fonts** — `Cormorant Garamond` (headings) + `Inter` (body)
 - **Font Awesome** — Scalable vector icons for a premium UI
-- **Vanilla JavaScript** — Advanced interactivity (theme toggle, calendar logic, mobile menu)
+- **Vanilla JavaScript** — Advanced interactivity (calendar logic, mobile menu)
 
 
 ---
 
-## 💡 Design Philosophy
+## Design Philosophy
 
 The UI follows a **Mobile-First** approach with a luxury aesthetic:
-- Neutral dark palette (`#1a1a1a`, `#2d2d2d`) with a gold accent (`#c9a84c`)
+- Neutral palette with a gold accent (`#c9a84c`)
 - Smooth CSS transitions for hover states and tab switching
 - Card-based layouts that reflow cleanly from 1-column mobile to 3-column desktop
 
