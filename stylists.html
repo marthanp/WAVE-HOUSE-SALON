@@ -508,7 +508,7 @@
         const g = btn.getAttribute('data-g');
         sCards.forEach(card => {
           const specs = (card.getAttribute('data-spec') || '').split(' ');
-          card.style.display = (g === 'all' || specs.includes(g)) ? 'block' : 'none';
+          card.style.display = (g === 'all' || specs.includes(g)) ? 'flex' : 'none';
         });
       });
     });

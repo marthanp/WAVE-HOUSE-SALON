@@ -551,9 +551,9 @@
           galleryGrid.style.display = 'none';
 
           cards.forEach(card => {
-            const cats = card.getAttribute('data-category') || '';
+            const cats = (card.getAttribute('data-category') || '').split(' ');
             if (filter === 'all' || cats.includes(filter)) {
-              card.style.display = 'block';
+              card.style.display = 'flex';
             } else {
               card.style.display = 'none';
             }
