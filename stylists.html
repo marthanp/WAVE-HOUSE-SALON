@@ -17,6 +17,8 @@
       border-radius: var(--radius);
       overflow: hidden;
       transition: var(--transition);
+      display: flex;
+      flex-direction: column;
     }
     .stylist-full-card:hover {
       border-color: var(--accent-color);
@@ -78,7 +80,12 @@
       color: var(--clr-purple);
       font-family: var(--font-body);
     }
-    .stylist-details { padding: 1.5rem; }
+    .stylist-details { 
+      padding: 1.5rem; 
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
     .stylist-details h3 {
       font-family: var(--font-head);
       font-size: 1.45rem;
@@ -119,6 +126,7 @@
       color: var(--clr-purple);
       border: 1px solid rgba(161, 51, 161, 0.25);
       transition: var(--transition);
+      margin-top: auto;
     }
     .stylist-details .book-link:hover {
       background: var(--clr-purple);
