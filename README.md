@@ -73,7 +73,7 @@ WAVE-HOUSE/
 ## Design Philosophy
 
 The UI follows a **Mobile-First** approach with a luxury aesthetic:
-- Neutral palette with a gold accent (`#c9a84c`)
+- Neutral palette with a vibrant purple accent (`#a133a1`)
 - Smooth CSS transitions for hover states and tab switching
 - Card-based layouts that reflow cleanly from 1-column mobile to 3-column desktop
 

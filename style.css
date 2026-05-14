@@ -9,16 +9,16 @@
 /* --- CSS Custom Properties --- */
 :root {
   /* Default: Light Mode */
-  --bg-color:     #f4f4f4;
+  --bg-color:     #eeeeee;
   --text-color:   #111111;
-  --accent-color: #c9a84c;
+  --accent-color: #a133a1;
   --card-bg:      #ffffff;
-  --nav-bg:       rgba(244, 244, 244, 0.95);
+  --nav-bg:       rgba(238, 238, 238, 0.95);
   --border-clr:   rgba(0,0,0,0.1);
   --muted-clr:    #666666;
   
-  --clr-gold:    #c9a84c;
-  --clr-gold-lt: #e2c97e;
+  --clr-purple:    #a133a1;
+  --clr-purple-lt: #c247c2;
   --radius:      10px;
   --shadow:      0 8px 32px rgba(0,0,0,0.1);
   --transition:  0.4s ease;
@@ -41,10 +41,10 @@
 [data-theme="dark"] {
   --bg-color:     #111111;
   --text-color:   #e8e8e8;
-  --accent-color: #c9a84c;
+  --accent-color: #a133a1;
   --card-bg:      #1e1e1e;
   --nav-bg:       rgba(17,17,17,0.92);
-  --border-clr:   rgba(201,168,76,0.15);
+  --border-clr:   rgba(161, 51, 161,0.15);
   --muted-clr:    #999999;
   --shadow:       0 8px 32px rgba(0,0,0,0.45);
 
@@ -52,14 +52,14 @@
   --hero-bg:     linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 50%, #0f0e0b 100%);
   --footer-bg:   #0d0d0d;
   --header-bg:   linear-gradient(135deg, #0d0d0d, #1a1a1a);
-  --cta-bg:      linear-gradient(135deg, #1a1408, #1e1a0e);
+  --cta-bg:      linear-gradient(135deg, #1a0e1a, #1e0e1e);
 
   /* Consistency variables */
   --clr-white:   #ffffff;
   --clr-card:    #1e1e1e;
   --clr-muted:   #999999;
   --clr-dark3:   #252525;
-  --clr-gold:    #c9a84c;
+  --clr-purple:  #a133a1;
 }
 
 /* --- Reset --- */
@@ -81,7 +81,7 @@ ul { list-style: none; }
 .container  { width: 90%; max-width: var(--max-w); margin: 0 auto; }
 .section    { padding: 80px 0; }
 .section-sm { padding: 50px 0; }
-.text-gold  { color: var(--accent-color); }
+.text-purple  { color: var(--accent-color); }
 .text-center{ text-align: center; }
 .mt-1 { margin-top: 0.5rem; }
 .mt-2 { margin-top: 1rem;   }
@@ -120,11 +120,11 @@ ul { list-style: none; }
   transition: var(--transition);
   border: none;
 }
-.btn-gold {
+.btn-purple {
   background: var(--accent-color);
-  color: #111;
+  color: #fff;
 }
-.btn-gold:hover { background: var(--clr-gold-lt); transform: translateY(-2px); }
+.btn-purple:hover { background: var(--clr-purple-lt); transform: translateY(-2px); }
 .btn-outline {
   background: transparent;
   border: 1.5px solid var(--accent-color);
@@ -233,7 +233,7 @@ ul { list-style: none; }
   position: fixed;
   top: 68px; left: 0; right: 0;
   background: var(--bg-color);
-  border-top: 1px solid rgba(201,168,76,0.15);
+  border-top: 1px solid rgba(161, 51, 161,0.15);
   padding: 1.5rem 2rem;
   z-index: 999;
   flex-direction: column;
@@ -631,7 +631,7 @@ ul { list-style: none; }
 }
 .booking-form-card {
   background: var(--card-bg);
-  border: 1px solid rgba(201,168,76,0.15);
+  border: 1px solid rgba(161, 51, 161,0.15);
   border-radius: var(--radius);
   padding: 2.5rem;
 }
@@ -675,7 +675,7 @@ ul { list-style: none; }
    =========================== */
 .footer {
   background: var(--footer-bg);
-  border-top: 1px solid rgba(201,168,76,0.12);
+  border-top: 1px solid rgba(161, 51, 161,0.12);
   padding: 60px 0 0;
 }
 .footer-grid {
@@ -723,7 +723,7 @@ ul { list-style: none; }
   position: absolute;
   top: -100px; right: -100px;
   width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(161, 51, 161,0.1) 0%, transparent 70%);
 }
 .page-header h1 {
   font-family: var(--font-head);
@@ -745,8 +745,8 @@ ul { list-style: none; }
 /* Success Message */
 .success-msg {
   display: none;
-  background: rgba(201,168,76,0.1);
-  border: 1px solid rgba(201,168,76,0.35);
+  background: rgba(161, 51, 161,0.1);
+  border: 1px solid rgba(161, 51, 161,0.35);
   border-radius: var(--radius);
   padding: 1.25rem;
   color: var(--accent-color);
@@ -941,8 +941,8 @@ ul { list-style: none; }
 /* --- CTA Strip --- */
 .cta-strip {
   background: var(--cta-bg);
-  border-top: 1px solid rgba(201,168,76,0.2);
-  border-bottom: 1px solid rgba(201,168,76,0.2);
+  border-top: 1px solid rgba(161, 51, 161, 0.2);
+  border-bottom: 1px solid rgba(161, 51, 161, 0.2);
   padding: 60px 0;
 }
 

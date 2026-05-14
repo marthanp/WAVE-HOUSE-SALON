@@ -50,13 +50,13 @@
     .stylist-avatar span:first-child {
       position: relative;
       z-index: 2;
-      text-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+      text-shadow: 0 0 20px rgba(161, 51, 161, 0.3);
     }
     .stylist-avatar::after {
       content: '';
       position: absolute;
       width: 200%; height: 200%;
-      background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(128,0,128,0.1) 0%, transparent 60%);
       top: -50%; left: -50%;
       animation: rotate 30s linear infinite;
       z-index: 1;
@@ -70,12 +70,12 @@
     .stylist-avatar .exp-badge {
       position: absolute;
       top: 1rem; right: 1rem;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid rgba(201,168,76,0.35);
+      background: rgba(161, 51, 161, 0.15);
+      border: 1px solid rgba(161, 51, 161, 0.35);
       border-radius: 50px;
       padding: 0.25rem 0.75rem;
       font-size: 0.72rem;
-      color: var(--accent-color);
+      color: var(--clr-purple);
       font-family: var(--font-body);
     }
     .stylist-details { padding: 1.5rem; }
@@ -89,7 +89,7 @@
       font-size: 0.78rem;
       letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: var(--accent-color);
+      color: var(--clr-purple);
       margin-bottom: 0.75rem;
     }
     .stylist-details .bio {
@@ -105,7 +105,7 @@
       margin-bottom: 1.25rem;
     }
     .stylist-details .tags span {
-      color: var(--accent-color);
+      color: var(--clr-purple);
       font-size: 0.72rem;
     }
     .stylist-details .book-link {
@@ -115,14 +115,14 @@
       border-radius: 8px;
       font-size: 0.85rem;
       font-weight: 500;
-      background: rgba(201,168,76,0.1);
-      color: var(--accent-color);
-      border: 1px solid rgba(201,168,76,0.25);
+      background: rgba(161, 51, 161, 0.1);
+      color: var(--clr-purple);
+      border: 1px solid rgba(161, 51, 161, 0.25);
       transition: var(--transition);
     }
     .stylist-details .book-link:hover {
-      background: var(--accent-color);
-      color: #111;
+      background: var(--clr-purple);
+      color: #fff;
     }
     .stat-strip {
       display: grid;
@@ -140,7 +140,7 @@
       display: block;
       font-family: var(--font-head);
       font-size: 1.3rem;
-      color: var(--accent-color);
+      color: var(--clr-purple);
     }
     .stat-strip-item span:last-child {
       font-size: 0.72rem;
@@ -153,7 +153,7 @@
       margin: 2rem 0 2.5rem;
     }
     .gender-btn {
-      background: var(--clr-dark3);
+      background: var(--clr-purple);
       border: 1px solid var(--border-clr);
       border-radius: 50px;
       color: var(--muted-clr);
@@ -204,7 +204,7 @@
         <li><a href="services.html" id="nav-services">Services</a></li>
         <li><a href="stylists.html" class="active" id="nav-stylists">Stylists</a></li>
         <li><a href="booking.html" id="nav-booking">Book Now</a></li>
-        <li><a href="booking.html" class="btn btn-gold nav-cta" id="nav-cta-btn">Book Appointment</a></li>
+        <li><a href="booking.html" class="btn btn-purple nav-cta" id="nav-cta-btn">Book Appointment</a></li>
 
         <li>
           <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Light/Dark Mode">
@@ -223,7 +223,7 @@
     <a href="services.html">Services</a>
     <a href="stylists.html">Stylists</a>
     <a href="booking.html">Book Now</a>
-    <a href="booking.html" class="btn btn-gold" style="text-align:center;margin-top:0.5rem;">Book Appointment</a>
+    <a href="booking.html" class="btn btn-purple" style="text-align:center;margin-top:0.5rem;">Book Appointment</a>
   </div>
 
   <!-- PAGE HEADER -->
