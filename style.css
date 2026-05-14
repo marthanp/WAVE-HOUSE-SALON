@@ -763,6 +763,7 @@ ul { list-style: none; }
   margin-top: 2rem;
   margin-bottom: 2.5rem;
 }
+/* Interactive Filter Buttons */
 .filter-btn {
   background: transparent;
   border: 1px solid var(--border-clr);
